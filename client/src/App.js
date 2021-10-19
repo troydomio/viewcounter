@@ -21,7 +21,13 @@ function App() {
   return (
 
     <div className="App">
-     <h1>This page was viewed {count.view} times!</h1>
+      <div className="bottom-border">
+        <div className="circlecontainer">
+        </div>
+      </div>
+      <p>This page was viewed </p>
+     <h1>{count.view}</h1>
+     <p>times!</p>
     </div>
   );
 }
