@@ -84,3 +84,4 @@ production:
   database: page_counter_production
   username: page_counter
   password: <%= ENV['PAGE_COUNTER_DATABASE_PASSWORD'] %>
+  
