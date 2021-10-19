@@ -1,23 +1,27 @@
-import logo from './logo.svg';
+import {useState, useEffect} from 'react';
 import './App.css';
 
 function App() {
+
+  const[count, setCount] = useState([])
+
+  // const fetch = () => {
+  //   fetch('https://damp-brook-81947.herokuapp.com/count')
+  //   .then(response => response.json())
+  // .then(data => console.log(data));
+  // }
+  useEffect(() => {
+    fetch("/count")
+      .then((r) => r.json())
+      .then(setCount);
+  }, []);
+
+  // console.log(count.view)
+  
   return (
+
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+     <h1>This page was viewed {count.view} times!</h1>
     </div>
   );
 }
